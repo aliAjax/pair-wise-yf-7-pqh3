@@ -397,6 +397,365 @@ h3 {
   margin: 14px 0;
 }
 
+/* 稿件连排台 */
+.composer-shell {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.92);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.composer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.composer-title {
+  font-size: 24px;
+}
+
+.composer-notice {
+  margin: 8px 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.composer-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(360px, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.composer-grid .panel {
+  box-shadow: none;
+}
+
+.badge.draft {
+  background: var(--muted);
+}
+
+.badge.pending {
+  background: var(--gold);
+}
+
+.manuscript-list,
+.snapshot-list {
+  display: grid;
+  gap: 8px;
+  max-height: 220px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.manuscript-item,
+.snapshot-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf8;
+  padding: 8px 10px;
+}
+
+.manuscript-meta {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.manuscript-meta strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.manuscript-meta span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.preset-tag {
+  display: inline-block;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: rgba(54, 95, 125, 0.12);
+  color: var(--blue);
+  padding: 1px 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.manuscript-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.manuscript-actions button {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.editor-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#manuscriptEditor {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fffdf8;
+  color: var(--ink);
+  padding: 10px 11px;
+  font: inherit;
+  line-height: 1.7;
+  outline: none;
+}
+
+#manuscriptEditor:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(54, 95, 125, 0.15);
+}
+
+.editor-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.composer-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.composer-settings label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.composer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.composer-actions button:disabled,
+.pager button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+  box-shadow: none;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pager button {
+  padding: 6px 10px;
+}
+
+.pager span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.preview-tag {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.preview-tag.candidate {
+  color: var(--gold);
+}
+
+.preview-tag.confirmed {
+  color: var(--green);
+}
+
+.page-stage {
+  overflow: auto;
+  padding: 4px;
+}
+
+.empty-state {
+  margin: 0;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 40px 16px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.page-grid {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 620px);
+  margin: 0 auto;
+  border: 2px solid #2f2921;
+  background: #fffaf1;
+  box-shadow: inset 0 0 0 10px rgba(183, 134, 44, 0.08);
+  padding: 14px;
+}
+
+.page-grid.vertical {
+  width: min(100%, 560px);
+}
+
+.page-cell {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(47, 41, 33, 0.14);
+  color: #211d19;
+  font-weight: 900;
+  font-size: clamp(11px, 1.6vw, 18px);
+  line-height: 1;
+  user-select: none;
+}
+
+.page-cell.empty {
+  background: rgba(255, 253, 248, 0.4);
+}
+
+.page-cell:not(.empty) {
+  border: 1px solid rgba(47, 41, 33, 0.55);
+  background: #fffdf8;
+}
+
+.page-grid.vertical .page-cell:not(.empty) {
+  writing-mode: vertical-rl;
+}
+
+.page-cell.opening {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.page-cell.closing {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.page-cell.atomic {
+  background: rgba(54, 95, 125, 0.08);
+}
+
+.page-cell.retreated {
+  box-shadow: inset 0 0 0 2px var(--gold);
+}
+
+.page-cell.hanging {
+  border-style: dashed;
+  border-color: var(--red);
+  background: rgba(164, 64, 55, 0.1);
+}
+
+.page-cell.mini {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.stat-line {
+  margin: 10px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.violation-list {
+  display: grid;
+  gap: 6px;
+}
+
+.violation-item {
+  margin: 0;
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  background: rgba(164, 64, 55, 0.07);
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.violation-item.warn {
+  border-left-color: var(--gold);
+  background: rgba(183, 134, 44, 0.08);
+}
+
+.violation-item.ok {
+  border-left-color: var(--green);
+  background: rgba(60, 112, 86, 0.08);
+  color: var(--green);
+  font-weight: 800;
+}
+
+.confirmed-card {
+  display: grid;
+  gap: 3px;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  background: rgba(60, 112, 86, 0.07);
+  padding: 10px;
+}
+
+.confirmed-card span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1120px) {
+  .composer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1120px) {
   .workspace {
     grid-template-columns: 1fr;

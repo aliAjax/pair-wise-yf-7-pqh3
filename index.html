@@ -46,6 +46,88 @@
         </label>
       </section>
 
+      <section class="composer-shell" aria-label="稿件连排台">
+        <div class="composer-head">
+          <div>
+            <p class="eyebrow">逐字连排 · 行禁则校验</p>
+            <h2 class="composer-title">稿件连排台</h2>
+          </div>
+          <span id="composerStatusBadge" class="badge draft">草稿</span>
+        </div>
+        <p id="composerNotice" class="composer-notice"></p>
+
+        <div class="composer-grid">
+          <aside class="panel manuscript-panel">
+            <div class="panel-head">
+              <h2>稿样</h2>
+              <span id="manuscriptCount"></span>
+            </div>
+            <div id="manuscriptList" class="manuscript-list"></div>
+            <div class="divider"></div>
+            <label class="editor-label" for="manuscriptEditor">稿件正文</label>
+            <textarea id="manuscriptEditor" rows="9" spellcheck="false"></textarea>
+            <div class="editor-meta">
+              <span id="composerCharCount"></span>
+              <span id="composerDirtyHint"></span>
+            </div>
+            <div class="composer-settings">
+              <label>
+                纸张
+                <select id="composerPaper">
+                  <option value="postcard">明信片</option>
+                  <option value="bookmark">书签</option>
+                  <option value="square">方形小笺</option>
+                </select>
+              </label>
+              <label>
+                排向
+                <select id="composerFlow">
+                  <option value="horizontal">横排</option>
+                  <option value="vertical">竖排</option>
+                </select>
+              </label>
+            </div>
+            <div class="composer-actions">
+              <button id="typesetBtn" class="primary" type="button">排版校验</button>
+              <button id="confirmLayoutBtn" type="button">确认版面</button>
+              <button id="rejectLayoutBtn" type="button">拒绝重排</button>
+              <button id="saveManuscriptBtn" type="button">存入稿样</button>
+            </div>
+          </aside>
+
+          <section class="panel pages-panel">
+            <div class="panel-head">
+              <h2>版页预览</h2>
+              <div class="pager">
+                <button id="prevPageBtn" type="button" aria-label="上一页">←</button>
+                <span id="pageIndicator"></span>
+                <button id="nextPageBtn" type="button" aria-label="下一页">→</button>
+              </div>
+            </div>
+            <p id="previewTag" class="preview-tag"></p>
+            <div id="pageStage" class="page-stage"></div>
+            <p id="layoutStats" class="stat-line"></p>
+            <ul class="legend">
+              <li><span class="page-cell opening mini">《</span>开启标点</li>
+              <li><span class="page-cell closing mini">。</span>收束标点</li>
+              <li><span class="page-cell retreated mini">字</span>整字回退</li>
+              <li><span class="page-cell hanging mini">。</span>行尾悬挂</li>
+            </ul>
+            <div id="violationList" class="violation-list"></div>
+          </section>
+
+          <aside class="panel snapshot-panel">
+            <div class="panel-head">
+              <h2>确认与快照</h2>
+            </div>
+            <div id="confirmedInfo" class="confirmed-info"></div>
+            <div class="divider"></div>
+            <h3>历史快照</h3>
+            <div id="snapshotList" class="snapshot-list"></div>
+          </aside>
+        </div>
+      </section>
+
       <section class="workspace">
         <aside class="panel inventory-panel">
           <div class="panel-head">
@@ -97,6 +179,9 @@
       </section>
     </main>
 
+    <script src="typesetting-rules.js"></script>
+    <script src="composer-store.js"></script>
+    <script src="composer-ui.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
