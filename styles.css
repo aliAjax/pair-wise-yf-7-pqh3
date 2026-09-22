@@ -430,3 +430,211 @@ h3 {
     padding: 10px;
   }
 }
+
+/* 稿件连排台 */
+.composer {
+  margin-top: 28px;
+  border-top: 2px dashed var(--line);
+  padding-top: 22px;
+}
+
+.composer-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.composer-head h2 {
+  font-size: clamp(24px, 3.4vw, 38px);
+}
+
+.composer-settings {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.composer-settings label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.composer-grid {
+  display: grid;
+  grid-template-columns: 340px minmax(360px, 1fr) 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.preset-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#manuscriptInput {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fffdf8;
+  color: var(--ink);
+  padding: 10px 11px;
+  font: inherit;
+  line-height: 1.7;
+  outline: none;
+}
+
+#manuscriptInput:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(54, 95, 125, 0.15);
+}
+
+.composer-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.composer-actions button {
+  flex: 1;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.message {
+  min-height: 20px;
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.message.ok {
+  color: var(--green);
+}
+
+.message.bad {
+  color: var(--red);
+}
+
+.report-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.report-list li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdf8;
+  padding: 8px;
+}
+
+.report-list li .mark {
+  font-weight: 900;
+}
+
+.report-list li.ok .mark {
+  color: var(--green);
+}
+
+.report-list li.bad {
+  border-color: var(--red);
+  background: rgba(164, 64, 55, 0.06);
+}
+
+.report-list li.bad .mark {
+  color: var(--red);
+}
+
+.report-list li div {
+  display: grid;
+  gap: 2px;
+}
+
+.report-list li div span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pages-strip {
+  display: grid;
+  gap: 18px;
+  max-height: 76vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.sheet-wrap {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.sheet-wrap figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sheet {
+  display: grid;
+  width: 100%;
+  border: 2px solid #2f2921;
+  background:
+    linear-gradient(rgba(47, 41, 33, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 41, 33, 0.08) 1px, transparent 1px),
+    #fffaf1;
+  box-shadow: inset 0 0 0 12px rgba(183, 134, 44, 0.08);
+  padding: 14px;
+  gap: 6px;
+}
+
+.sheet.postcard {
+  aspect-ratio: 1.45;
+}
+
+.sheet.bookmark {
+  max-width: 320px;
+  aspect-ratio: 0.42;
+}
+
+.sheet.square {
+  max-width: 560px;
+  aspect-ratio: 1;
+}
+
+.sheet .cell {
+  cursor: default;
+  font-size: clamp(9px, 1.4vw, 16px);
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 1120px) {
+  .composer-grid {
+    grid-template-columns: 1fr;
+  }
+}

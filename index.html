@@ -95,8 +95,81 @@
           <div id="draftList" class="draft-list"></div>
         </aside>
       </section>
+
+      <section class="composer" aria-label="稿件连排台">
+        <div class="composer-head">
+          <div>
+            <p class="eyebrow">整稿连排 · 避头尾 · 分页</p>
+            <h2>稿件连排台</h2>
+          </div>
+          <div class="composer-settings">
+            <label>
+              纸张
+              <select id="composerPaper">
+                <option value="postcard">明信片</option>
+                <option value="bookmark">书签</option>
+                <option value="square">方形小笺</option>
+              </select>
+            </label>
+            <label>
+              排向
+              <select id="composerFlow">
+                <option value="horizontal">横排</option>
+                <option value="vertical">竖排</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="composer-grid">
+          <aside class="panel">
+            <div class="panel-head">
+              <h2>稿件草稿</h2>
+              <span id="composerCharCount"></span>
+            </div>
+            <div class="preset-row">
+              <select id="presetSelect" aria-label="预置稿样"></select>
+              <button id="loadPresetBtn" type="button">载入稿样</button>
+            </div>
+            <textarea id="manuscriptInput" rows="12" placeholder="在此录入稿件，或载入预置稿样……"></textarea>
+            <div class="composer-actions">
+              <button id="typesetBtn" class="primary" type="button">排版校验</button>
+              <button id="confirmBtn" type="button">确认版面</button>
+            </div>
+            <p id="composerMessage" class="message" role="status"></p>
+            <div class="divider"></div>
+            <h3>校验报告</h3>
+            <ul id="reportList" class="report-list"></ul>
+          </aside>
+
+          <div class="stage-wrap composer-stage">
+            <div class="status-strip">
+              <div>
+                <strong>版页预览</strong>
+                <span id="composerMeta"></span>
+              </div>
+              <div id="composerStatusBadge" class="badge warn">待校验</div>
+            </div>
+            <div id="pagesStrip" class="pages-strip"></div>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-head">
+              <h2>版页状态</h2>
+              <span id="pageCountLabel"></span>
+            </div>
+            <div id="pageStateList" class="usage-list"></div>
+            <div class="divider"></div>
+            <h3>上一版快照</h3>
+            <div id="snapshotList" class="draft-list"></div>
+          </aside>
+        </div>
+      </section>
     </main>
 
     <script src="app.js"></script>
+    <script src="typeset-rules.js"></script>
+    <script src="typeset-store.js"></script>
+    <script src="typeset-ui.js"></script>
   </body>
 </html>
